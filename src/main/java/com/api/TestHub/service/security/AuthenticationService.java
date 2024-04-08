@@ -1,10 +1,10 @@
-package com.api.TestHub.service;
+package com.api.TestHub.service.security;
 
 import com.api.TestHub.domain.User;
 import com.api.TestHub.domain.enums.Role;
-import com.api.TestHub.dto.JwtAuthenticationResponse;
-import com.api.TestHub.dto.SignInRequest;
-import com.api.TestHub.dto.SignUpRequest;
+import com.api.TestHub.dto.security.JwtAuthenticationResponse;
+import com.api.TestHub.dto.security.SignInRequest;
+import com.api.TestHub.dto.security.SignUpRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
-    private final UserService userService;
+    private final UserServiceImpl userService;
     private final JwtService jwtService;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;

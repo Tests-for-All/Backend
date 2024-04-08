@@ -1,6 +1,6 @@
 package com.api.TestHub.controller;
 
-import com.api.TestHub.service.UserService;
+import com.api.TestHub.service.security.UserServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Tag(name = "Примеры", description = "Примеры запросов с разными правами доступа")
 public class ExampleController {
-    private final UserService service;
+    private final UserServiceImpl service;
 
     @GetMapping
     @Operation(summary = "Доступен только авторизованным пользователям")

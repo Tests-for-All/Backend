@@ -2,6 +2,7 @@ FROM eclipse-temurin:17 as app-build
 ENV RELEASE=17
 
 WORKDIR /opt/build
+
 COPY ./target/TestHub-0.0.1-SNAPSHOT.jar ./application.jar
 
 RUN java -Djarmode=layertools -jar application.jar extract

@@ -1,4 +1,4 @@
-package com.api.TestHub.dto;
+package com.api.TestHub.dto.security;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;

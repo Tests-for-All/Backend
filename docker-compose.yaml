@@ -10,7 +10,7 @@ services:
       - POSTGRES_PASSWORD=root
       - POSTGRES_DB=test-hub
   CandidateService:
-    image: 'test-hub'
+    image: 'spanduy/test-hub'
     build:
       context: .
     ports:

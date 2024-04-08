@@ -1,4 +1,4 @@
-package com.api.TestHub.service;
+package com.api.TestHub.service.security;
 
 import com.api.TestHub.domain.User;
 import io.jsonwebtoken.Claims;

@@ -1,9 +1,9 @@
 package com.api.TestHub.controller;
 
-import com.api.TestHub.dto.JwtAuthenticationResponse;
-import com.api.TestHub.dto.SignInRequest;
-import com.api.TestHub.dto.SignUpRequest;
-import com.api.TestHub.service.AuthenticationService;
+import com.api.TestHub.dto.security.JwtAuthenticationResponse;
+import com.api.TestHub.dto.security.SignInRequest;
+import com.api.TestHub.dto.security.SignUpRequest;
+import com.api.TestHub.service.security.AuthenticationService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;

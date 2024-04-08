@@ -1,7 +1,7 @@
 package com.api.TestHub.config;
 
-import com.api.TestHub.service.JwtService;
-import com.api.TestHub.service.UserService;
+import com.api.TestHub.service.security.JwtService;
+import com.api.TestHub.service.security.UserServiceImpl;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,7 +25,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     public static final String BEARER_PREFIX = "Bearer ";
     public static final String HEADER_NAME = "Authorization";
     private final JwtService jwtService;
-    private final UserService userService;
+    private final UserServiceImpl userService;
 
     @Override
     protected void doFilterInternal(
