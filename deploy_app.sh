@@ -12,5 +12,5 @@ mkdir -p build-app && cd build-app
 # Извлечение слоев приложения из JAR-файла
 java -Djarmode=layertools -jar ../target/TestHub-0.0.1-SNAPSHOT.jar extract
 
-# Запуск Docker Compose для поднятия контейнеров
-docker-compose up -d
+## Запуск Docker Compose для поднятия контейнеров
+#docker-compose up -d
