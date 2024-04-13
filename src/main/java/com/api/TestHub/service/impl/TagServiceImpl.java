@@ -27,6 +27,12 @@ public class TagServiceImpl implements TagService {
     }
 
     @Override
+    public List<Tag> getAllTagsById(List<Long> ids) {
+        List<Tag> tags = tagRepository.findAllById(ids);
+        return tags;
+    }
+
+    @Override
     public Tag getTag(Long id) {
         return tagRepository.findById(id).get();
     }

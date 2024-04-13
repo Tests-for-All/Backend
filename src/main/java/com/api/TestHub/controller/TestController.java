@@ -5,6 +5,8 @@ import com.api.TestHub.dto.testDto.TestCreateDto;
 import com.api.TestHub.dto.testDto.TestDto;
 import com.api.TestHub.dto.testDto.TestListDto;
 import com.api.TestHub.dto.testDto.TestUpdateDto;
+import com.api.TestHub.exception.BadRequestException;
+import com.api.TestHub.exception.NotFoundException;
 import com.api.TestHub.service.TestService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -28,7 +30,7 @@ public class TestController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<TestDto> findTest(@PathVariable("id") Long id) {
+    public ResponseEntity<TestDto> findTest(@PathVariable("id") Long id) throws NotFoundException {
         TestDto testDto = testService.getTest(id);
         return new ResponseEntity<>(testDto, HttpStatus.OK);
     }
@@ -40,7 +42,7 @@ public class TestController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> createTest(@PathVariable("id") Long id, @RequestBody TestUpdateDto testUpdateDto) {
+    public ResponseEntity<Void> createTest(@PathVariable("id") Long id, @RequestBody TestUpdateDto testUpdateDto) throws NotFoundException, BadRequestException {
         testService.updateTest(id, testUpdateDto);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

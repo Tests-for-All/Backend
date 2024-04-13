@@ -14,7 +14,8 @@ import java.util.List;
 @Table(name = "tags")
 public class Tag {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tag_sequence")
+    @SequenceGenerator(name = "tag_sequence", sequenceName = "tags_id_seq", allocationSize = 1)
     private Long id;
     private String name;
 }

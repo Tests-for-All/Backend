@@ -1,3 +1,17 @@
+--CREATE SEQUENCE tags_seq
+--    START WITH 1
+--    INCREMENT BY 1
+--    NO MINVALUE
+--    NO MAXVALUE
+--    CACHE 1;
+
+--
+--    START WITH 1
+--    INCREMENT BY 1
+--    NO MINVALUE
+--    NO MAXVALUE
+--    CACHE 1;
+
 CREATE TABLE tags (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255)

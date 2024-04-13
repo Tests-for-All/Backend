@@ -1,5 +1,6 @@
 package com.api.TestHub.service;
 
+import com.api.TestHub.domain.Answer;
 import com.api.TestHub.dto.answerDto.AnswerCreateDto;
 import com.api.TestHub.dto.answerDto.AnswerDto;
 import com.api.TestHub.dto.answerDto.AnswerHiddenDto;
@@ -12,6 +13,6 @@ public interface AnswerService {
     List<AnswerDto> getAllAnswers();
     AnswerHiddenDto getAnswersHidden(Long id);
     AnswerDto getAnswer(Long id);
-    void createAnswer(AnswerCreateDto answerCreateDto);
+    Answer createAnswer(AnswerCreateDto answerCreateDto);
     void updateAnswer(Long id, AnswerUpdateDto answerUpdateDto);
 }

@@ -12,7 +12,8 @@ import lombok.*;
 @Table(name = "answers")
 public class Answer {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "answer_sequence")
+    @SequenceGenerator(name = "answer_sequence", sequenceName = "answers_id_seq", allocationSize = 1)
     private Long id;
 
     private String text;

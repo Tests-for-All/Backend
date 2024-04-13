@@ -38,9 +38,9 @@ public class AnswerServiceImpl implements AnswerService {
     }
 
     @Override
-    public void createAnswer(AnswerCreateDto answerCreateDto) {
+    public Answer createAnswer(AnswerCreateDto answerCreateDto) {
         Answer answer = modelMapper.map(answerCreateDto, Answer.class);
-        answerRepository.save(answer);
+        return answerRepository.save(answer);
     }
 
     @Override

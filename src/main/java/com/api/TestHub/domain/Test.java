@@ -16,7 +16,8 @@ import java.util.List;
 @Table(name = "tests")
 public class Test {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "test_sequence")
+    @SequenceGenerator(name = "test_sequence", sequenceName = "tests_id_seq", allocationSize = 1)
     private Long id;
 
     private String name;
@@ -32,5 +33,6 @@ public class Test {
     private User user;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "test_id")
     private List<Question> questions;
 }

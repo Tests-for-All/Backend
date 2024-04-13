@@ -1,5 +1,6 @@
 package com.api.TestHub.service;
 
+import com.api.TestHub.domain.Question;
 import com.api.TestHub.domain.Tag;
 import com.api.TestHub.dto.questionDto.*;
 import com.api.TestHub.dto.tagDto.TagCreateDto;
@@ -12,6 +13,6 @@ public interface QuestionService {
     List<QuestionListDto> getAllQuestions();
     QuestionDto getQuestion(Long id);
     QuestionHiddenDto getQuestionHidden(Long id);
-    void createQuestion(QuestionCreateDto questionCreateDto);
+    Question createQuestion(QuestionCreateDto questionCreateDto);
     void updateQuestion(Long id, QuestionUpdateDto questionUpdateDto);
 }

@@ -1,3 +1,10 @@
+--CREATE SEQUENCE users_seq
+--    START WITH 1
+--    INCREMENT BY 1
+--    NO MINVALUE
+--    NO MAXVALUE
+--    CACHE 1;
+
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     username VARCHAR(255),

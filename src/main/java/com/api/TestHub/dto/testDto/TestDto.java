@@ -2,6 +2,7 @@ package com.api.TestHub.dto.testDto;
 
 import com.api.TestHub.domain.Tag;
 import com.api.TestHub.domain.User;
+import com.api.TestHub.dto.questionDto.QuestionListDto;
 import com.api.TestHub.dto.tagDto.TagDto;
 import com.api.TestHub.dto.userDto.UserDto;
 import lombok.AllArgsConstructor;
@@ -16,8 +17,9 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TestDto {
-    private String id;
+    private Long id;
     private String name;
     private UserDto user;
     private List<Tag> tags;
+    private List<QuestionListDto> questionListDtos;
 }

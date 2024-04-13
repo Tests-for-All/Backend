@@ -41,11 +41,14 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public void createQuestion(QuestionCreateDto questionCreateDto) {
-        questionCreateDto.getAnswerCreateDtos().forEach(answerService::createAnswer);
+    public Question createQuestion(QuestionCreateDto questionCreateDto) {
+        List<Answer> answers = questionCreateDto.getAnswerCreateDtos().stream()
+                .map(answerService::createAnswer)
+                .toList();
         Question question = modelMapper.map(questionCreateDto, Question.class);
+        question.setAnswers(answers);
 
-        questionRepository.save(question);
+        return questionRepository.save(question);
     }
 
     @Override
