@@ -1,5 +1,6 @@
 package com.api.TestHub.dto.testDto;
 
+import com.api.TestHub.dto.questionDto.QuestionCreateDto;
 import com.api.TestHub.dto.tagDto.TagListDto;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,4 +16,5 @@ import java.util.List;
 public class TestCreateDto {
     private String name;
     private List<TagListDto> tagListDtos;
+    private List<QuestionCreateDto> questionCreateDtos;
 }

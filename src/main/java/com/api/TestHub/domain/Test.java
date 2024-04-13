@@ -22,8 +22,7 @@ public class Test {
     private String name;
 
     @JsonIgnore
-    @ManyToMany(fetch = FetchType.LAZY,
-                cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(name="tests_tags",
             joinColumns = @JoinColumn(name="test_id", referencedColumnName="id"),
             inverseJoinColumns = @JoinColumn(name="tag_id", referencedColumnName="id") )
@@ -31,4 +30,7 @@ public class Test {
 
     @ManyToOne
     private User user;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Question> questions;
 }

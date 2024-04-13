@@ -1,5 +1,6 @@
 package com.api.TestHub.service.impl;
 
+import com.api.TestHub.domain.Question;
 import com.api.TestHub.domain.Tag;
 import com.api.TestHub.domain.Test;
 import com.api.TestHub.domain.User;
@@ -9,6 +10,7 @@ import com.api.TestHub.dto.testDto.TestListDto;
 import com.api.TestHub.dto.testDto.TestUpdateDto;
 import com.api.TestHub.repository.TagRepository;
 import com.api.TestHub.repository.TestRepository;
+import com.api.TestHub.service.QuestionService;
 import com.api.TestHub.service.TestService;
 import com.api.TestHub.service.security.UserServiceImpl;
 import jakarta.transaction.Transactional;
@@ -26,6 +28,7 @@ public class TestServiceImpl implements TestService {
     private final TestRepository testRepository;
     private final TagRepository tagRepository;
     private final UserServiceImpl userService;
+    private final QuestionService questionService;
 
     @Override
     public List<TestListDto> getAllTests() {
@@ -53,6 +56,7 @@ public class TestServiceImpl implements TestService {
                     .toList();
             test.setTags(tags);
         }
+        testCreateDto.getQuestionCreateDtos().forEach(questionService::createQuestion);
         testRepository.save(test);
     }
 
